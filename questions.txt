@@ -1,0 +1,30 @@
+Variables|What is the correct way to declare a variable in Python?|x = 10|let x = 10|int x = 10|declare x = 10
+Variables|Which of the following is a valid variable name?|_value|1value|value!|$value
+Variables|Which keyword is NOT used for variable declaration?|let|x = 5|var|None
+Data Types|What is the type of value returned by input() in Python?|str|int|bool|char
+Data Types|Which data type is immutable in Python?|tuple|list|set|dictionary
+Data Types|Which function is used to check the type of a variable?|type()|checktype()|datatype()|varType()
+Operators|What is the output of 3 ** 2?|9|6|8|5
+Operators|Which operator is used for floor division in Python?|//|/|%|**
+Operators|What does ‘!=’ mean in Python?|Not equal|Assignment|Equals|None of these
+Loops|Which keyword exits a loop prematurely?|break|continue|exit|pass
+Loops|What does the continue statement do?|Skips to next iteration|Ends loop|Pauses execution|Restarts loop
+Loops|What is the correct syntax of a while loop?|while condition:|loop while condition|while(condition)|do while
+Conditionals|What is the output of bool(0)?|False|True|0|Error
+Conditionals|Which operator is used for logical AND?|and|&&|AND|& 
+Conditionals|Which is the correct if-else structure in Python?|if condition:\n    code|if (condition) { code }|then...else|if: code
+Functions|Which keyword is used to define a function?|def|func|define|function
+Functions|What is the default return value of a function that does not return anything?|None|0|Empty string|Error
+Functions|How do you call a function named my_func?|my_func()|call my_func|func(my_func)|invoke(my_func)
+Strings|What is the output of len("Python")?|6|7|5|None
+Strings|Which method converts string to lowercase?|lower()|down()|toLowerCase()|min()
+Strings|How are strings indexed in Python?|Starting from 0|From 1|From -1|Not indexed
+Lists|Which method adds an item at the end of a list?|append()|add()|insert()|push()
+Lists|Which operator is used to concatenate lists?|+|*|&|%
+Lists|How do you access the last element in a list?|list[-1]|list[0]|list[1]|list[length]
+File Handling|Which function is used to open a file?|open()|file()|openfile()|read()
+File Handling|What mode opens a file for writing only?|w|r|rw|x
+File Handling|Which method reads one line at a time from a file?|readline()|read()|readlines()|line()
+Exception Handling|What keyword is used to catch exceptions?|except|catch|try|handle
+Exception Handling|What block must be used with try?|except|final|throw|handle
+OOP|What does the 'self' keyword represent in a class method?|Instance of the class|Superclass|Module name|Static class
