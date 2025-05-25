@@ -82,6 +82,21 @@ def show_final_result(name, correct, total, score, improvements):
     print("🎓 Thank you for participating. Keep learning Python!\n")
     print("=" * 60)
 
+def save_report_card(name, correct, total, score, improvements):
+
+    filename = f"report_cards/{name}_report_card.txt"
+    with open(filename, 'w') as file:
+        file.write(f"Student Name: {name}\n")
+        file.write(f"Correct Answers: {correct}/{total}\n")
+        file.write(f"Score: {score}%\n")
+        file.write("Areas of Improvement:\n")
+        if improvements:
+            for area in improvements:
+                file.write(f"   - {area}\n")
+        else:
+            file.write("   None. Excellent Work!\n")
+        file.write("=" * 60 + "\n\n")
+
 def main():
     name = input("Enter your name: ").strip()
     questions = load_questions("questions.txt")
@@ -105,6 +120,9 @@ def main():
     save_results("results.txt", name, correct, total, score)
     improvements = find_improvement_areas(results)
     show_final_result(name, correct, total, score, improvements)
+
+    # Save the report card dynamically
+    save_report_card(name, correct, total, score, improvements)
 
 # Run the game
 if __name__ == "__main__":
