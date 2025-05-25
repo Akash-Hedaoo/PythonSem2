@@ -7,7 +7,7 @@ def load_questions(filename):
     with open(filename, 'r') as file:
         for line in file:
             parts = line.strip().split('|')
-            if len(parts) == 8:  # Updated to check for 8 parts (including correct answer text and index)
+            if len(parts) == 7:  # Updated to check for 8 parts (including correct answer text and index)
                 question = {
                     'subdomain': parts[0],
                     'question': parts[1],
