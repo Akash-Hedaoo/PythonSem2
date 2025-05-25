@@ -7,12 +7,12 @@ def load_questions(filename):
     with open(filename, 'r') as file:
         for line in file:
             parts = line.strip().split('|')
-            if len(parts) == 6:
+            if len(parts) == 8:  # Updated to check for 8 parts (including correct answer text and index)
                 question = {
                     'subdomain': parts[0],
                     'question': parts[1],
                     'options': parts[2:6],
-                    'answer': parts[2]  # Always assume first option is correct
+                    'answer': parts[6],  # Correct answer text
                 }
                 questions.append(question)
     return questions
@@ -38,6 +38,7 @@ def get_user_answer(timeout=10):
             return answer
     return None
 
+# Update evaluate_answer to use the correct answer text
 def evaluate_answer(q, user_choice):
     if user_choice is None:
         return False
