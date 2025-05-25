@@ -1,8 +1,0 @@
-Student Name: Ashik
-Correct Answers: 3/5
-Score: 60%
-Areas of Improvement:
-   - Loops
-   - Functions
-============================================================
-
