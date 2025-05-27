@@ -1,0 +1,32 @@
+👤 Student Name: pravin
+✅ Correct Answers: 0/5
+📊 Score: 0%
+📝 ========================================================
+📋 Detailed Question Report:
+Q1: How are strings indexed in Python?
+   📝 Your Answer: From 1
+   ✅ Correct Answer: Starting from 0
+   --------------------------------------------------------
+Q2: What is the output of len("Python")?
+   📝 Your Answer: 5
+   ✅ Correct Answer: 6
+   --------------------------------------------------------
+Q3: How do you access the last element in a list?
+   📝 Your Answer: list[0]
+   ✅ Correct Answer: list[-1]
+   --------------------------------------------------------
+Q4: Which method reads one line at a time from a file?
+   📝 Your Answer: line()
+   ✅ Correct Answer: readline()
+   --------------------------------------------------------
+Q5: Which of the following is a valid variable name?
+   📝 Your Answer: _valuevalue
+   ✅ Correct Answer: _value
+   --------------------------------------------------------
+📌 Areas of Improvement:
+   🔻 Strings
+   🔻 Lists
+   🔻 File Handling
+   🔻 Variables
+🏁 ========================================================
+

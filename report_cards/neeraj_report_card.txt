@@ -1,0 +1,31 @@
+👤 Student Name: neeraj
+✅ Correct Answers: 2/5
+📊 Score: 40%
+📝 ========================================================
+📋 Detailed Question Report:
+Q1: What is the output of type(3.5)?
+   📝 Your Answer: <class 'int'>
+   ✅ Correct Answer: <class 'float'>
+   --------------------------------------------------------
+Q2: Which of the following is NOT a valid variable name?
+   📝 Your Answer: _value
+   ✅ Correct Answer: 2value
+   --------------------------------------------------------
+Q3: What is the output of bool(0)?
+   📝 Your Answer: False
+   ✅ Correct Answer: False
+   --------------------------------------------------------
+Q4: How do you call a function named my_func?
+   📝 Your Answer: invoke(my_func)
+   ✅ Correct Answer: my_func()
+   --------------------------------------------------------
+Q5: Which function is used to open a file?
+   📝 Your Answer: open()
+   ✅ Correct Answer: open()
+   --------------------------------------------------------
+📌 Areas of Improvement:
+   🔻 Data Types
+   🔻 Variables
+   🔻 Functions
+🏁 ========================================================
+

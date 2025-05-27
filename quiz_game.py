@@ -3,6 +3,9 @@ import random
 import math
 import os
 
+# Ensure working directory is correct
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 def load_questions(filename):
     questions = []
     with open(filename, 'r') as file:
@@ -29,11 +32,11 @@ def get_user_answer(timeout=10):
     print(f"⏱️ You have {timeout} seconds to answer.")
     start = time.time()
     while True:
-        answer = input("👉 Your answer (A/B/C/D): ").strip().upper()
-        if time.time() - start >= 10:
+        if time.time() - start >= timeout:
             print("⌛ Time's up! Marked as unanswered.")
             return None
-        elif answer not in ['A', 'B', 'C', 'D']:
+        answer = input("👉 Your answer (A/B/C/D): ").strip().upper()
+        if answer not in ['A', 'B', 'C', 'D']:
             print("⚠️ Invalid choice. Use A, B, C or D.")
         else:
             return answer
@@ -70,7 +73,7 @@ def show_final_result(name, correct, total, score, improvements):
     print("🎯 " + "QUIZ SUMMARY".center(50, '-') + " 🎯")
     print("=" * 60)
     print(f"👤 Participant: {name}")
-    print(f"✅ Correct Answers: {correct}/{total}")
+    print(f" Correct Answers: {correct}/{total}")
     print(f"📊 Score: {score}%")
     print("\n📌 Areas of Improvement:")
     if improvements:
@@ -85,25 +88,68 @@ def show_final_result(name, correct, total, score, improvements):
 def save_report_card(name, correct, total, score, improvements, results):
     os.makedirs('report_cards', exist_ok=True)
     filename = f"report_cards/{name}_report_card.txt"
-    with open(filename, 'w') as file:
-        file.write(f"Student Name: {name}\n")
-        file.write(f"Correct Answers: {correct}/{total}\n")
-        file.write(f"Score: {score}%\n")
-        file.write("=" * 60 + "\n")
-        file.write("Detailed Question Report:\n")
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(f"👤 Student Name: {name}\n")
+        file.write(f"✅ Correct Answers: {correct}/{total}\n")
+        file.write(f"📊 Score: {score}%\n")
+        file.write("📝 " + "=" * 56 + "\n")
+        file.write("📋 Detailed Question Report:\n")
         for i, result in enumerate(results):
             file.write(f"Q{i + 1}: {result['question']}\n")
             user_answer_content = result['user_answer'] if result['user_answer'] == "Unanswered" else result['options'][ord(result['user_answer']) - 65]
-            file.write(f"   Your Answer: {user_answer_content}\n")
-            file.write(f"   Correct Answer: {result['correct_answer']}\n")
-            file.write("-" * 60 + "\n")
-        file.write("Areas of Improvement:\n")
+            file.write(f"   📝 Your Answer: {user_answer_content}\n")
+            file.write(f"   ✅ Correct Answer: {result['correct_answer']}\n")
+            file.write("   " + "-" * 56 + "\n")
+        file.write("📌 Areas of Improvement:\n")
         if improvements:
             for area in improvements:
-                file.write(f"   - {area}\n")
+                file.write(f"   🔻 {area}\n")
         else:
-            file.write("   None. Excellent Work!\n")
-        file.write("=" * 60 + "\n\n")
+            file.write("   🟢 None. Excellent Work!\n")
+        file.write("🏁 " + "=" * 56 + "\n\n")
+
+#  NEW: Leaderboard Maintenance Function
+def update_leaderboard(results_file, leaderboard_file):
+    scores = []
+    if not os.path.exists(results_file):
+        return
+
+    with open(results_file, 'r') as file:
+        for line in file:
+            parts = line.strip().split('|')
+            if len(parts) == 3:
+                name = parts[0]
+                correct = parts[1]
+                score_str = parts[2].replace('%', '')
+                try:
+                    score = int(score_str)
+                    scores.append((name, score))
+                except ValueError:
+                    continue
+
+    # scores.sort(key=lambda x: x[1], reverse=True)
+    # Bubble sort to sort scores in descending order
+    n = len(scores)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if scores[j][1] < scores[j + 1][1]:
+                scores[j], scores[j + 1] = scores[j + 1], scores[j]
+
+    with open(leaderboard_file, 'w', encoding='utf-8') as file:
+        file.write("🏆 Leaderboard\n")
+        file.write("⭐" + "=" * 28 + "⭐\n")
+        for i, (name, score) in enumerate(scores[:10]):
+            medal = "🥇" if i == 0 else "🥈" if i == 1 else "🥉" if i == 2 else "🎖️"
+            file.write(f"{i + 1}. {medal} {name} - {score}%\n")
+
+#  NEW: Display Leaderboard
+def show_leaderboard(leaderboard_file):
+    if not os.path.exists(leaderboard_file):
+        print("\n🚫 No leaderboard data found.")
+        return
+    print("\n📋 Current Leaderboard:\n")
+    with open(leaderboard_file, 'r', encoding='cp1252') as file:
+        print(file.read())
 
 def main():
     name = input("Enter your name: ").strip()
@@ -125,11 +171,14 @@ def main():
             'subdomain': q['subdomain'],
             'correct': correct
         })
+
     correct, total, score = calculate_results(results)
     save_results("results.txt", name, correct, total, score)
     improvements = find_improvement_areas(results)
     show_final_result(name, correct, total, score, improvements)
     save_report_card(name, correct, total, score, improvements, results)
+    update_leaderboard("results.txt", "leaderboard.txt")
+    show_leaderboard("leaderboard.txt")
 
 if __name__ == "__main__":
     main()

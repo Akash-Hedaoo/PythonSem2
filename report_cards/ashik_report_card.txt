@@ -1,0 +1,30 @@
+Student Name: ashik
+Correct Answers: 3/5
+Score: 60%
+============================================================
+Detailed Question Report:
+Q1: Which keyword is used to return a value from a function?
+   Your Answer: return
+   Correct Answer: return
+------------------------------------------------------------
+Q2: How many times will the loop run: for i in range(3)?
+   Your Answer: Unanswered
+   Correct Answer: 3
+------------------------------------------------------------
+Q3: Which method adds an item at the end of a list?
+   Your Answer: append()
+   Correct Answer: append()
+------------------------------------------------------------
+Q4: What mode opens a file for writing only?
+   Your Answer: w
+   Correct Answer: w
+------------------------------------------------------------
+Q5: What is the output of 2 + 3 * 4?
+   Your Answer: Unanswered
+   Correct Answer: 14
+------------------------------------------------------------
+Areas of Improvement:
+   - Loops
+   - Operators
+============================================================
+
