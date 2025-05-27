@@ -121,11 +121,9 @@ def update_leaderboard(results_file, leaderboard_file):
                 name = parts[0]
                 correct = parts[1]
                 score_str = parts[2].replace('%', '')
-                try:
+                if score_str.isdigit():
                     score = int(score_str)
                     scores.append((name, score))
-                except ValueError:
-                    continue
 
     n = len(scores)
     for i in range(n):
@@ -139,9 +137,12 @@ def update_leaderboard(results_file, leaderboard_file):
         file.write("+----------------------+----------------------+-------------------+\n")
         file.write("| Rank                | Name                 | Score (%)         |\n")
         file.write("+----------------------+----------------------+-------------------+\n")
-        for i, score_entry in enumerate(scores[:10]):
-            name, score = score_entry
-            file.write(f"| {i + 1:<18} | {name:<20} | {score:<16}% |\n")
+        rank = 1
+        for score_entry in scores[:10]:
+            name = score_entry[0]
+            score = score_entry[1]
+            file.write("| {0:<18} | {1:<20} | {2:<16}% |\n".format(rank, name, score))
+            rank += 1
         file.write("+----------------------+----------------------+-------------------+\n")
 
 #  NEW: Display Leaderboard
