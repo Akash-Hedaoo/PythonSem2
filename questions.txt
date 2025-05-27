@@ -1,30 +1,43 @@
-Variables|What is the correct way to declare a variable in Python?|x = 10|let x = 10|int x = 10|declare x = 10|x = 10|1
-Variables|Which of the following is a valid variable name?|_value|1value|value!|$value|_value|1
-Variables|Which keyword is NOT used for variable declaration?|let|x = 5|var|None|let|1
-Data Types|What is the type of value returned by input() in Python?|str|int|bool|char|str|1
-Data Types|Which data type is immutable in Python?|tuple|list|set|dictionary|tuple|1
-Data Types|Which function is used to check the type of a variable?|type()|checktype()|datatype()|varType()|type()|1
-Operators|What is the output of 3 ** 2?|9|6|8|5|9|1
-Operators|Which operator is used for floor division in Python?|//|/|%|**|//|1
-Operators|What does ‘!=’ mean in Python?|Not equal|Assignment|Equals|None of these|Not equal|1
-Loops|Which keyword exits a loop prematurely?|break|continue|exit|pass|break|1
-Loops|What does the continue statement do?|Skips to next iteration|Ends loop|Pauses execution|Restarts loop|Skips to next iteration|1
-Loops|What is the correct syntax of a while loop?|while condition:|loop while condition|while(condition)|do while|while condition:|1
-Conditionals|What is the output of bool(0)?|False|True|0|Error|False|1
-Conditionals|Which operator is used for logical AND?|and|&&|AND|&|and|1
-Conditionals|Which is the correct if-else structure in Python?|if condition:\n    code|if (condition) { code }|then...else|if: code|if condition:\n    code|1
-Functions|Which keyword is used to define a function?|def|func|define|function|def|1
-Functions|What is the default return value of a function that does not return anything?|None|0|Empty string|Error|None|1
-Functions|How do you call a function named my_func?|my_func()|call my_func|func(my_func)|invoke(my_func)|my_func()|1
-Strings|What is the output of len("Python")?|6|7|5|None|6|1
-Strings|Which method converts string to lowercase?|lower()|down()|toLowerCase()|min()|lower()|1
-Strings|How are strings indexed in Python?|Starting from 0|From 1|From -1|Not indexed|Starting from 0|1
-Lists|Which method adds an item at the end of a list?|append()|add()|insert()|push()|append()|1
-Lists|Which operator is used to concatenate lists?|+|*|&|%|+|1
-Lists|How do you access the last element in a list?|list[-1]|list[0]|list[1]|list[length]|list[-1]|1
-File Handling|Which function is used to open a file?|open()|file()|openfile()|read()|open()|1
-File Handling|What mode opens a file for writing only?|w|r|rw|x|w|1
-File Handling|Which method reads one line at a time from a file?|readline()|read()|readlines()|line()|readline()|1
-Exception Handling|What keyword is used to catch exceptions?|except|catch|try|handle|except|1
-Exception Handling|What block must be used with try?|except|final|throw|handle|except|1
-OOP|What does the 'self' keyword represent in a class method?|Instance of the class|Superclass|Module name|Static class|Instance of the class|1
+Variables|What is the correct way to declare a variable in Python?|let x = 10|x = 10|int x = 10|declare x = 10|x = 10  
+Variables|Which of the following is a valid variable name?|value!|$value|_value|_valuevalue|_value  
+Variables|Which keyword is NOT used for variable declaration?|x = 5|None|var|let|let  
+Data Types|What is the type of value returned by input() in Python?|str|int|bool|char|str  
+Data Types|Which data type is immutable in Python?|set|list|tuple|dictionary|tuple  
+Data Types|Which function is used to check the type of a variable?|datatype()|type()|checktype()|varType()|type()  
+Operators|What is the output of 3 ** 2?|6|9|8|5|9  
+Operators|Which operator is used for floor division in Python?|**|/|//|%|//  
+Operators|What does ‘!=’ mean in Python?|Assignment|Equals|Not equal|None of these|Not equal  
+Loops|Which keyword exits a loop prematurely?|continue|break|exit|pass|break  
+Loops|What does the continue statement do?|Ends loop|Pauses execution|Skips to next iteration|Restarts loop|Skips to next iteration  
+Loops|What is the correct syntax of a while loop?|loop while condition|while(condition)|while condition:|do while|while condition:  
+Conditionals|What is the output of bool(0)?|0|True|False|Error|False  
+Conditionals|Which operator is used for logical AND?|&&|and|AND|&|and  
+Conditionals|Which is the correct if-else structure in Python?|if: code|then...else|if (condition) { code }|if condition:\n    code|if condition:\n    code  
+Functions|Which keyword is used to define a function?|function|define|func|def|def  
+Functions|What is the default return value of a function that does not return anything?|0|None|Error|Empty string|None  
+Functions|How do you call a function named my_func?|invoke(my_func)|func(my_func)|my_func()|call my_func|my_func()  
+Strings|What is the output of len("Python")?|5|None|7|6|6  
+Strings|Which method converts string to lowercase?|min()|down()|toLowerCase()|lower()|lower()  
+Strings|How are strings indexed in Python?|From 1|From -1|Starting from 0|Not indexed|Starting from 0  
+Lists|Which method adds an item at the end of a list?|insert()|push()|append()|add()|append()  
+Lists|Which operator is used to concatenate lists?|*|%|+|&|+  
+Lists|How do you access the last element in a list?|list[0]|list[length]|list[-1]|list[1]|list[-1]  
+File Handling|Which function is used to open a file?|openfile()|read()|file()|open()|open()  
+File Handling|What mode opens a file for writing only?|r|w|rw|x|w  
+File Handling|Which method reads one line at a time from a file?|read()|line()|readlines()|readline()|readline()  
+Exception Handling|What keyword is used to catch exceptions?|handle|catch|except|try|except  
+Exception Handling|What block must be used with try?|throw|final|except|handle|except  
+OOP|What does the 'self' keyword represent in a class method?|Superclass|Instance of the class|Static class|Module name|Instance of the class  
+Variables|Which of the following is NOT a valid variable name?|2value|_value|value_2|value2|2value  
+Variables|Which of the following assigns a float value?|float x = 3.14|x = 3.14|x = "3.14"|x = 3,14|x = 3.14  
+Data Types|Which data type can store multiple values in a single variable?|str|list|int|bool|list  
+Data Types|What is the output of type(3.5)?|<class 'int'>|<class 'str'>|<class 'float'>|<class 'bool'>|<class 'float'>  
+Operators|Which operator is used to find remainder?|/|**|%|//|%  
+Operators|What will be the output of 10 // 3?|3.33|Error|4|3|3  
+Operators|What is the output of 2 + 3 * 4?|14|24|20|9|14  
+Loops|How many times will the loop run: for i in range(3)?|3|2|4|0|3  
+Loops|Which keyword skips the current iteration in a loop?|break|pass|exit|continue|continue  
+Conditionals|Which of the following is a valid condition check?|if (x > 20 then)|if x > 10|if x:|if: x|if x > 10  
+Conditionals|What will be the output of bool(1)?|False|True|Error|0|True  
+Functions|What is a parameter in a function?|Return value|Loop|Input|variable|variable  
+Functions|Which keyword is used to return a value from a function?|pass|output|yield|return|return  
