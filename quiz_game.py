@@ -70,43 +70,43 @@ def find_improvement_areas(answers):
 
 def show_final_result(name, correct, total, score, improvements):
     print("\n" + "=" * 60)
-    print("🎯 " + "QUIZ SUMMARY".center(50, '-') + " 🎯")
+    print("QUIZ SUMMARY".center(60, '-'))
     print("=" * 60)
-    print(f"👤 Participant: {name}")
-    print(f" Correct Answers: {correct}/{total}")
-    print(f"📊 Score: {score}%")
-    print("\n📌 Areas of Improvement:")
+    print(f"Participant: {name}")
+    print(f"Correct Answers: {correct}/{total}")
+    print(f"Score: {score}%")
+    print("\nAreas of Improvement:")
     if improvements:
         for area in improvements:
-            print(f"   🔻 {area}")
+            print(f"   - {area}")
     else:
-        print("   🟢 None. Excellent Work!")
+        print("   None. Excellent Work!")
     print("=" * 60)
-    print("🎓 Thank you for participating. Keep learning Python!\n")
+    print("Thank you for participating. Keep learning Python!\n")
     print("=" * 60)
 
 def save_report_card(name, correct, total, score, improvements, results):
     os.makedirs('report_cards', exist_ok=True)
     filename = f"report_cards/{name}_report_card.txt"
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.write(f"👤 Student Name: {name}\n")
-        file.write(f"✅ Correct Answers: {correct}/{total}\n")
-        file.write(f"📊 Score: {score}%\n")
-        file.write("📝 " + "=" * 56 + "\n")
-        file.write("📋 Detailed Question Report:\n")
+    with open(filename, 'w') as file:
+        file.write(f"Student Name: {name}\n")
+        file.write(f"Correct Answers: {correct}/{total}\n")
+        file.write(f"Score: {score}%\n")
+        file.write("=" * 60 + "\n")
+        file.write("Detailed Question Report:\n")
         for i, result in enumerate(results):
             file.write(f"Q{i + 1}: {result['question']}\n")
             user_answer_content = result['user_answer'] if result['user_answer'] == "Unanswered" else result['options'][ord(result['user_answer']) - 65]
-            file.write(f"   📝 Your Answer: {user_answer_content}\n")
-            file.write(f"   ✅ Correct Answer: {result['correct_answer']}\n")
+            file.write(f"   Your Answer: {user_answer_content}\n")
+            file.write(f"   Correct Answer: {result['correct_answer']}\n")
             file.write("   " + "-" * 56 + "\n")
-        file.write("📌 Areas of Improvement:\n")
+        file.write("Areas of Improvement:\n")
         if improvements:
             for area in improvements:
-                file.write(f"   🔻 {area}\n")
+                file.write(f"   - {area}\n")
         else:
-            file.write("   🟢 None. Excellent Work!\n")
-        file.write("🏁 " + "=" * 56 + "\n\n")
+            file.write("   None. Excellent Work!\n")
+        file.write("=" * 60 + "\n\n")
 
 #  NEW: Leaderboard Maintenance Function
 def update_leaderboard(results_file, leaderboard_file):
@@ -127,28 +127,30 @@ def update_leaderboard(results_file, leaderboard_file):
                 except ValueError:
                     continue
 
-    # scores.sort(key=lambda x: x[1], reverse=True)
-    # Bubble sort to sort scores in descending order
     n = len(scores)
     for i in range(n):
         for j in range(0, n - i - 1):
             if scores[j][1] < scores[j + 1][1]:
-                scores[j], scores[j + 1] = scores[j + 1], scores[j]
+                temp = scores[j]
+                scores[j] = scores[j + 1]
+                scores[j + 1] = temp
 
-    with open(leaderboard_file, 'w', encoding='utf-8') as file:
-        file.write("🏆 Leaderboard\n")
-        file.write("⭐" + "=" * 28 + "⭐\n")
-        for i, (name, score) in enumerate(scores[:10]):
-            medal = "🥇" if i == 0 else "🥈" if i == 1 else "🥉" if i == 2 else "🎖️"
-            file.write(f"{i + 1}. {medal} {name} - {score}%\n")
+    with open(leaderboard_file, 'w') as file:
+        file.write("+----------------------+----------------------+-------------------+\n")
+        file.write("| Rank                | Name                 | Score (%)         |\n")
+        file.write("+----------------------+----------------------+-------------------+\n")
+        for i, score_entry in enumerate(scores[:10]):
+            name, score = score_entry
+            file.write(f"| {i + 1:<18} | {name:<20} | {score:<16}% |\n")
+        file.write("+----------------------+----------------------+-------------------+\n")
 
 #  NEW: Display Leaderboard
 def show_leaderboard(leaderboard_file):
     if not os.path.exists(leaderboard_file):
-        print("\n🚫 No leaderboard data found.")
+        print("\nNo leaderboard data found.")
         return
-    print("\n📋 Current Leaderboard:\n")
-    with open(leaderboard_file, 'r', encoding='cp1252') as file:
+    print("\nCurrent Leaderboard:\n")
+    with open(leaderboard_file, 'r') as file:
         print(file.read())
 
 def main():
@@ -182,3 +184,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
