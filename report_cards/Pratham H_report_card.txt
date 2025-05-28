@@ -1,0 +1,32 @@
+Student Name: Pratham H
+Correct Answers: 1/5
+Score: 20%
+============================================================
+Detailed Question Report:
+Q1: What will be the output of 10 // 3?
+   Your Answer: 3
+   Correct Answer: 3
+   --------------------------------------------------------
+Q2: Which method reads one line at a time from a file?
+   Your Answer: line()
+   Correct Answer: readline()
+   --------------------------------------------------------
+Q3: Which keyword is used to return a value from a function?
+   Your Answer: pass
+   Correct Answer: return
+   --------------------------------------------------------
+Q4: Which of the following is a valid condition check?
+   Your Answer: if (x > 20 then)
+   Correct Answer: if x > 10
+   --------------------------------------------------------
+Q5: Which keyword is NOT used for variable declaration?
+   Your Answer: x = 5
+   Correct Answer: let
+   --------------------------------------------------------
+Areas of Improvement:
+   - File Handling
+   - Functions
+   - Conditionals
+   - Variables
+============================================================
+

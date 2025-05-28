@@ -41,3 +41,4 @@ Conditionals|Which of the following is a valid condition check?|if (x > 20 then)
 Conditionals|What will be the output of bool(1)?|False|True|Error|0|True  
 Functions|What is a parameter in a function?|Return value|Loop|Input|variable|variable  
 Functions|Which keyword is used to return a value from a function?|pass|output|yield|return|return  
+

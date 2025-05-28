@@ -1,0 +1,31 @@
+Student Name: Hrishka
+Correct Answers: 2/5
+Score: 40%
+============================================================
+Detailed Question Report:
+Q1: What is the output of len("Python")?
+   Your Answer: 7
+   Correct Answer: 6
+   --------------------------------------------------------
+Q2: Which is the correct if-else structure in Python?
+   Your Answer: if: code
+   Correct Answer: if condition:\n    code
+   --------------------------------------------------------
+Q3: What does the 'self' keyword represent in a class method?
+   Your Answer: Module name
+   Correct Answer: Instance of the class
+   --------------------------------------------------------
+Q4: Which of the following is a valid variable name?
+   Your Answer: _value
+   Correct Answer: _value
+   --------------------------------------------------------
+Q5: Which of the following assigns a float value?
+   Your Answer: x = 3.14
+   Correct Answer: x = 3.14
+   --------------------------------------------------------
+Areas of Improvement:
+   - Strings
+   - Conditionals
+   - OOP
+============================================================
+

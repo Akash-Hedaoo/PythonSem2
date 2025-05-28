@@ -1,32 +1,30 @@
-Student Name: 1
-Correct Answers: 1/5
-Score: 20%
+Student Name: Akash
+Correct Answers: 2/5
+Score: 40%
 ============================================================
 Detailed Question Report:
 Q1: Which of the following assigns a float value?
-   Your Answer: float x = 3.14
+   Your Answer: x = 3.14
    Correct Answer: x = 3.14
    --------------------------------------------------------
-Q2: How many times will the loop run: for i in range(3)?
-   Your Answer: 3
-   Correct Answer: 3
+Q2: Which data type is immutable in Python?
+   Your Answer: Unanswered
+   Correct Answer: tuple
    --------------------------------------------------------
-Q3: Which keyword exits a loop prematurely?
-   Your Answer: continue
+Q3: What is the correct syntax of a while loop?
+   Your Answer: Unanswered
+   Correct Answer: while condition:
+   --------------------------------------------------------
+Q4: Which keyword exits a loop prematurely?
+   Your Answer: pass
    Correct Answer: break
    --------------------------------------------------------
-Q4: What keyword is used to catch exceptions?
-   Your Answer: handle
-   Correct Answer: except
-   --------------------------------------------------------
-Q5: What is the output of type(3.5)?
-   Your Answer: <class 'int'>
-   Correct Answer: <class 'float'>
+Q5: What does the continue statement do?
+   Your Answer: Skips to next iteration
+   Correct Answer: Skips to next iteration
    --------------------------------------------------------
 Areas of Improvement:
-   - Variables
-   - Loops
-   - Exception Handling
    - Data Types
+   - Loops
 ============================================================
 
