@@ -1,32 +1,33 @@
-Student Name: yg
-Correct Answers: 1/5
-Score: 20%
+Student Name: Harsh Kolte
+Correct Answers: 0/5
+Score: 0%
 ============================================================
 Detailed Question Report:
-Q1: What will be the output of bool(1)?
-   Your Answer: False
-   Correct Answer: True
+Q1: Which operator is used to find remainder?
+   Your Answer: /
+   Correct Answer: %
    --------------------------------------------------------
 Q2: Which keyword skips the current iteration in a loop?
    Your Answer: break
    Correct Answer: continue
    --------------------------------------------------------
-Q3: What is the output of type(3.5)?
-   Your Answer: <class 'int'>
-   Correct Answer: <class 'float'>
+Q3: What mode opens a file for writing only?
+   Your Answer: r
+   Correct Answer: w
    --------------------------------------------------------
-Q4: What is the output of 2 + 3 * 4?
-   Your Answer: 14
-   Correct Answer: 14
+Q4: How do you call a function named my_func?
+   Your Answer: invoke(my_func)
+   Correct Answer: my_func()
    --------------------------------------------------------
-Q5: What will be the output of 10 // 3?
-   Your Answer: 3.33
-   Correct Answer: 3
+Q5: What keyword is used to catch exceptions?
+   Your Answer: handle
+   Correct Answer: except
    --------------------------------------------------------
 Areas of Improvement:
-   - Conditionals
-   - Loops
-   - Data Types
    - Operators
+   - Loops
+   - File Handling
+   - Functions
+   - Exception Handling
 ============================================================
 

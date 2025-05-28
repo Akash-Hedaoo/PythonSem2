@@ -1,0 +1,32 @@
+Student Name: Neraj
+Correct Answers: 1/5
+Score: 20%
+============================================================
+Detailed Question Report:
+Q1: What will be the output of 10 // 3?
+   Your Answer: 3.33
+   Correct Answer: 3
+   --------------------------------------------------------
+Q2: What keyword is used to catch exceptions?
+   Your Answer: handle
+   Correct Answer: except
+   --------------------------------------------------------
+Q3: What is the output of 2 + 3 * 4?
+   Your Answer: 14
+   Correct Answer: 14
+   --------------------------------------------------------
+Q4: Which keyword is used to return a value from a function?
+   Your Answer: pass
+   Correct Answer: return
+   --------------------------------------------------------
+Q5: Which function is used to check the type of a variable?
+   Your Answer: datatype()
+   Correct Answer: type()
+   --------------------------------------------------------
+Areas of Improvement:
+   - Operators
+   - Exception Handling
+   - Functions
+   - Data Types
+============================================================
+

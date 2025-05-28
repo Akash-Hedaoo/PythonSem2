@@ -1,0 +1,30 @@
+Student Name: Shourya Hingalkar
+Correct Answers: 2/5
+Score: 40%
+============================================================
+Detailed Question Report:
+Q1: Which method reads one line at a time from a file?
+   Your Answer: read()
+   Correct Answer: readline()
+   --------------------------------------------------------
+Q2: What is the output of bool(0)?
+   Your Answer: 0
+   Correct Answer: False
+   --------------------------------------------------------
+Q3: Which function is used to open a file?
+   Your Answer: openfile()
+   Correct Answer: open()
+   --------------------------------------------------------
+Q4: Which keyword is used to define a function?
+   Your Answer: def
+   Correct Answer: def
+   --------------------------------------------------------
+Q5: How do you call a function named my_func?
+   Your Answer: my_func()
+   Correct Answer: my_func()
+   --------------------------------------------------------
+Areas of Improvement:
+   - File Handling
+   - Conditionals
+============================================================
+

@@ -3,9 +3,6 @@ import random
 import math
 import os
 
-# Ensure working directory is correct
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
 def load_questions(filename):
     questions = []
     with open(filename, 'r') as file:
@@ -32,11 +29,11 @@ def get_user_answer(timeout=10):
     print(f"⏱️ You have {timeout} seconds to answer.")
     start = time.time()
     while True:
+        answer = input("👉 Your answer (A/B/C/D): ").strip().upper()
         if time.time() - start >= timeout:
             print("⌛ Time's up! Marked as unanswered.")
             return None
-        answer = input("👉 Your answer (A/B/C/D): ").strip().upper()
-        if answer not in ['A', 'B', 'C', 'D']:
+        elif answer not in ['A', 'B', 'C', 'D']:
             print("⚠️ Invalid choice. Use A, B, C or D.")
         else:
             return answer
@@ -64,29 +61,30 @@ def save_results(filename, user, correct, total, score):
 def find_improvement_areas(answers):
     improvement_areas = []
     for ans in answers:
-        if not ans['correct'] and ans['subdomain'] not in improvement_areas:
+        if not ans['correct'] and (ans['subdomain'] not in improvement_areas):
             improvement_areas.append(ans['subdomain'])
     return improvement_areas
 
 def show_final_result(name, correct, total, score, improvements):
     print("\n" + "=" * 60)
-    print("QUIZ SUMMARY".center(60, '-'))
+    print("-" * 24 ,end='')
+    print("QUIZ SUMMARY",end='')
+    print("-" * 24)
     print("=" * 60)
     print(f"Participant: {name}")
     print(f"Correct Answers: {correct}/{total}")
     print(f"Score: {score}%")
     print("\nAreas of Improvement:")
-    if improvements:
+    if len(improvements) != 0:
         for area in improvements:
             print(f"   - {area}")
     else:
-        print("   None. Excellent Work!")
+        print("   - None. Excellent Work!")
     print("=" * 60)
-    print("Thank you for participating. Keep learning Python!\n")
+    print("Thank you for participating. Keep learning Python!\n",end='')
     print("=" * 60)
 
 def save_report_card(name, correct, total, score, improvements, results):
-    os.makedirs('report_cards', exist_ok=True)
     filename = f"report_cards/{name}_report_card.txt"
     with open(filename, 'w') as file:
         file.write(f"Student Name: {name}\n")
@@ -94,21 +92,26 @@ def save_report_card(name, correct, total, score, improvements, results):
         file.write(f"Score: {score}%\n")
         file.write("=" * 60 + "\n")
         file.write("Detailed Question Report:\n")
-        for i, result in enumerate(results):
-            file.write(f"Q{i + 1}: {result['question']}\n")
-            user_answer_content = result['user_answer'] if result['user_answer'] == "Unanswered" else result['options'][ord(result['user_answer']) - 65]
+        i = 1
+        for result in results:
+            file.write(f"Q{i}: {result['question']}\n")
+            if result['user_answer'] == "Unanswered":
+                user_answer_content = "Unanswered"
+            else:
+                option_index = ord(result['user_answer']) - ord('A')
+                user_answer_content = result['options'][option_index]
             file.write(f"   Your Answer: {user_answer_content}\n")
             file.write(f"   Correct Answer: {result['correct_answer']}\n")
-            file.write("   " + "-" * 56 + "\n")
+            file.write( "   " + "-" * 56 + "\n")
+            i += 1
         file.write("Areas of Improvement:\n")
-        if improvements:
+        if len(improvements) != 0:
             for area in improvements:
                 file.write(f"   - {area}\n")
         else:
-            file.write("   None. Excellent Work!\n")
+            file.write("   - None. Excellent Work!\n")
         file.write("=" * 60 + "\n\n")
 
-#  NEW: Leaderboard Maintenance Function
 def update_leaderboard(results_file, leaderboard_file):
     scores = []
     if not os.path.exists(results_file):
@@ -121,11 +124,9 @@ def update_leaderboard(results_file, leaderboard_file):
                 name = parts[0]
                 correct = parts[1]
                 score_str = parts[2].replace('%', '')
-                try:
+                if score_str.isdigit():
                     score = int(score_str)
                     scores.append((name, score))
-                except ValueError:
-                    continue
 
     n = len(scores)
     for i in range(n):
@@ -137,14 +138,16 @@ def update_leaderboard(results_file, leaderboard_file):
 
     with open(leaderboard_file, 'w') as file:
         file.write("+----------------------+----------------------+-------------------+\n")
-        file.write("| Rank                | Name                 | Score (%)         |\n")
+        file.write("| Rank                 | Name                 | Score (%)         |\n")
         file.write("+----------------------+----------------------+-------------------+\n")
-        for i, score_entry in enumerate(scores[:10]):
-            name, score = score_entry
-            file.write(f"| {i + 1:<18} | {name:<20} | {score:<16}% |\n")
+        rank = 1
+        for score_entry in scores[:10]:
+            name = score_entry[0]
+            score = score_entry[1]
+            file.write("| {0:<18}   | {1:<20} | {2:<16}% |\n".format(rank, name, score))
+            rank += 1
         file.write("+----------------------+----------------------+-------------------+\n")
 
-#  NEW: Display Leaderboard
 def show_leaderboard(leaderboard_file):
     if not os.path.exists(leaderboard_file):
         print("\nNo leaderboard data found.")
@@ -182,7 +185,4 @@ def main():
     update_leaderboard("results.txt", "leaderboard.txt")
     show_leaderboard("leaderboard.txt")
 
-if __name__ == "__main__":
-    main()
-
-
+main()
