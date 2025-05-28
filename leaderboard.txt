@@ -7,5 +7,6 @@
 | 4                    | Shourya Hingalkar    | 40              % |
 | 5                    | Pratham H            | 20              % |
 | 6                    | Neraj                | 20              % |
-| 7                    | Harsh Kolte          | 0               % |
+| 7                    | Sherlock Holmes      | 20              % |
+| 8                    | Harsh Kolte          | 0               % |
 +----------------------+----------------------+-------------------+

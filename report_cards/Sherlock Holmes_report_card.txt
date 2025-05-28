@@ -1,0 +1,32 @@
+Student Name: Sherlock Holmes
+Correct Answers: 1/5
+Score: 20%
+============================================================
+Detailed Question Report:
+Q1: What is the output of 3 ** 2?
+   Your Answer: 6
+   Correct Answer: 9
+   --------------------------------------------------------
+Q2: Which of the following is a valid condition check?
+   Your Answer: if x > 10
+   Correct Answer: if x > 10
+   --------------------------------------------------------
+Q3: What is the type of value returned by input() in Python?
+   Your Answer: int
+   Correct Answer: str
+   --------------------------------------------------------
+Q4: Which is the correct if-else structure in Python?
+   Your Answer: if (condition) { code }
+   Correct Answer: if condition:\n    code
+   --------------------------------------------------------
+Q5: How do you call a function named my_func?
+   Your Answer: call my_func
+   Correct Answer: my_func()
+   --------------------------------------------------------
+Areas of Improvement:
+   - Operators
+   - Data Types
+   - Conditionals
+   - Functions
+============================================================
+
